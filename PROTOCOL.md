@@ -18,7 +18,7 @@ document probably applies to them too (untested).
 | Wake-up | Hold the line in **BREAK for ~200 ms** before the first command |
 | Fast mode | 57600 or 115200 baud for image transfers (switched by command `41`) |
 
-The camera must have its slide cover open (powered on). While linked, the LCD shows only
+The camera must be on (lens cover slid open). While linked, the LCD shows only
 the PC-link icon. The camera drops the link after about 3 minutes of inactivity.
 
 ## Commands

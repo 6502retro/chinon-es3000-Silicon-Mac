@@ -145,7 +145,7 @@ class Camera:
             except CameraError as e:
                 self.log("hello failed:", e)
                 time.sleep(0.3)
-        raise CameraError("could not connect - cover open, cable in, fresh batteries?")
+        raise CameraError("could not connect - is the lens cover open (camera on), the cable in, and are the batteries fresh?")
 
     def close(self):
         try:

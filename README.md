@@ -6,7 +6,7 @@ No Windows 3.1, no virtual machine, and no original software needed.
 The camera's serial protocol and its `.DCT` image format were reverse-engineered from the
 original 1995 driver and serial captures.
 
-I have not tested this with the other OEM models: Dakota DCC 9500, Dycan 10-C, Kodak DC50 zoom, and Promaster Digital One
+I have not tested this with the other OEM models: Dakota DCC 9500, Dycam 10-C, Kodak DC50 zoom, and Promaster Digital One
 
 ![The app connected to a camera](docs/gui.png)
 
@@ -30,6 +30,7 @@ I have not tested this with the other OEM models: Dakota DCC 9500, Dycan 10-C, K
 
 * The camera's PC serial cable (8-pin mini-DIN to DB9)
 * A USB-to-RS232 (DB9) adapter. FTDI-based adapters work well.
+* The camera switched on: slide the **lens cover** open and keep it open while connected.
 
 ## Quick start
 

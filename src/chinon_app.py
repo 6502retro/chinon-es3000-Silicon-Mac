@@ -138,7 +138,7 @@ class App(tk.Tk):
         ttk.Button(top, text="↻", width=3, command=self.refresh_ports).pack(side="left")
         self.connect_btn = ttk.Button(top, text="Connect", command=self.on_connect)
         self.connect_btn.pack(side="left", padx=8)
-        self.status_lbl = ttk.Label(top, text="Not connected - open the camera's cover, then Connect",
+        self.status_lbl = ttk.Label(top, text="Not connected - slide the lens cover open, then Connect",
                                     foreground="#a00")
         self.status_lbl.pack(side="left", padx=8)
         ttk.Button(top, text="Convert .DCT files…", command=self.on_convert).pack(side="right")
@@ -342,7 +342,7 @@ class App(tk.Tk):
                     pass
             except CameraError as e:
                 self.log("Error:", e)
-                self.ui.put(("error", f"{e}\n\nTip: close and reopen the camera cover, then Connect again."))
+                self.ui.put(("error", f"{e}\n\nTip: close and reopen the lens cover (turns the camera off and on), then Connect again."))
                 self._drop()
             except Exception as e:
                 self.log("Error:", repr(e))
@@ -363,7 +363,7 @@ class App(tk.Tk):
 
     def need_cam(self):
         if not self.cam:
-            raise CameraError("Not connected. Open the camera cover and click Connect.")
+            raise CameraError("Not connected. Slide the lens cover open and click Connect.")
 
     # ----------------------------------------------------------- picture list
     def _time(self, n):
@@ -479,7 +479,7 @@ class App(tk.Tk):
             self._read_settings()
             self._list()
             return
-        raise CameraError("Camera not found. Check the cable, batteries, and that the cover is open.")
+        raise CameraError("Camera not found. Check the cable, the batteries, and that the lens cover is open.")
 
     def _apply_speed(self):
         self.cam.fast_baud = SPEED_CHOICES.get(self.speed_var.get(), 57600)
