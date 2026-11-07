@@ -4,11 +4,9 @@ Download, convert, and control a **Chinon ES-3000** (1995) digital camera from W
 No Windows 3.1, no virtual machine, and no original software needed.
 
 The camera's serial protocol and its `.DCT` image format were reverse-engineered from the
-original 1995 driver and serial captures. As far as we know this is the first public
-documentation of either.
+original 1995 driver and serial captures.
 
-Probably also works with the rebadged twins of the camera: **Dycam 10-C**,
-**Promaster Digital One**, and the Kodak and Dakota versions (untested).
+I have not tested this with the other OEM models: Dakota DCC 9500, Dycan 10-C, Kodak DC50 zoom, and Promaster Digital One
 
 ## What it does
 
