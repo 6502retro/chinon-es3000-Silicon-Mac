@@ -8,6 +8,8 @@ original 1995 driver and serial captures.
 
 I have not tested this with the other OEM models: Dakota DCC 9500, Dycan 10-C, Kodak DC50 zoom, and Promaster Digital One
 
+![The app connected to a camera](docs/gui.png)
+
 ## What it does
 
 * Finds the camera on any COM port automatically
@@ -48,6 +50,18 @@ Command line (no window):
 pip install -r requirements.txt
 python src/chinon_decode.py picture.DCT        # -> picture.png
 ```
+
+## Sample photos
+
+Taken with an ES-3000 and downloaded/decoded with this app (unedited apart from rotation).
+
+| Superfine (640×480) | Fine (640×480, rotated) |
+|---|---|
+| ![Superfine](docs/ES3000_20261105_225253_04_SF.png) | ![Fine](docs/ES3000_20261107_142014_F.png) |
+
+| Normal (320×240) | Normal (320×240) |
+|---|---|
+| ![Normal](docs/ES3000_20261105_225253_09_N.png) | ![Normal](docs/ES3000_20261106_153327_N.png) |
 
 ## Docs
 
