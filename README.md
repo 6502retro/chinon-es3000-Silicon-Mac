@@ -28,7 +28,6 @@ I have not tested this with the other OEM models: Dakota DCC 9500, Dycan 10-C, K
 
 * The camera's PC serial cable (8-pin mini-DIN to DB9)
 * A USB-to-RS232 (DB9) adapter. FTDI-based adapters work well.
-* Fresh AA batteries. The cover must be open while connected.
 
 ## Quick start
 
