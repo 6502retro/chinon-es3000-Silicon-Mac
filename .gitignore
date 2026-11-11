@@ -1,9 +1,16 @@
-__pycache__/
-*.pyc
+# macOS / Xcode
+.DS_Store
+xcuserdata/
+*.xcuserstate
+DerivedData/
 build/
-dist/
-*.spec
+*.xcarchive
+
+# Camera pictures and raw data
 photos/
-logs/
 *.DCT
 *.dct
+
+# Python (tools/)
+__pycache__/
+*.pyc

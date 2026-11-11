@@ -1,0 +1,286 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+/* Begin PBXBuildFile section */
+		C3E50000000000000000000A /* ChinonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E500000000000000000001 /* ChinonApp.swift */; };
+		C3E50000000000000000000B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E500000000000000000002 /* ContentView.swift */; };
+		C3E50000000000000000000C /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E500000000000000000003 /* AppModel.swift */; };
+		C3E50000000000000000000D /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E500000000000000000004 /* Camera.swift */; };
+		C3E50000000000000000000E /* SerialPort.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E500000000000000000005 /* SerialPort.swift */; };
+		C3E50000000000000000000F /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E500000000000000000006 /* Decoder.swift */; };
+		C3E500000000000000000010 /* ImageSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E500000000000000000007 /* ImageSupport.swift */; };
+		C3E500000000000000000011 /* chinon_params.json in Resources */ = {isa = PBXBuildFile; fileRef = C3E500000000000000000008 /* chinon_params.json */; };
+		C3E500000000000000000012 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3E500000000000000000009 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C3E500000000000000000014 /* Chinon ES-3000.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chinon ES-3000.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3E500000000000000000001 /* ChinonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChinonApp.swift; sourceTree = "<group>"; };
+		C3E500000000000000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C3E500000000000000000003 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		C3E500000000000000000004 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		C3E500000000000000000005 /* SerialPort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialPort.swift; sourceTree = "<group>"; };
+		C3E500000000000000000006 /* Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
+		C3E500000000000000000007 /* ImageSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSupport.swift; sourceTree = "<group>"; };
+		C3E500000000000000000008 /* chinon_params.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = chinon_params.json; sourceTree = "<group>"; };
+		C3E500000000000000000009 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C3E500000000000000000013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C3E50000000000000000001C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C3E500000000000000000016 = {
+			isa = PBXGroup;
+			children = (
+				C3E500000000000000000017 /* ChinonES3000 */,
+				C3E500000000000000000018 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C3E500000000000000000018 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3E500000000000000000014 /* Chinon ES-3000.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C3E500000000000000000017 /* ChinonES3000 */ = {
+			isa = PBXGroup;
+			children = (
+				C3E500000000000000000001 /* ChinonApp.swift */,
+				C3E500000000000000000002 /* ContentView.swift */,
+				C3E500000000000000000003 /* AppModel.swift */,
+				C3E500000000000000000004 /* Camera.swift */,
+				C3E500000000000000000005 /* SerialPort.swift */,
+				C3E500000000000000000006 /* Decoder.swift */,
+				C3E500000000000000000007 /* ImageSupport.swift */,
+				C3E500000000000000000008 /* chinon_params.json */,
+				C3E500000000000000000009 /* Assets.xcassets */,
+				C3E500000000000000000013 /* Info.plist */,
+			);
+			path = ChinonES3000;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C3E500000000000000000019 /* ChinonES3000 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3E50000000000000000001E /* Build configuration list for PBXNativeTarget "ChinonES3000" */;
+			buildPhases = (
+				C3E50000000000000000001A /* Sources */,
+				C3E50000000000000000001C /* Frameworks */,
+				C3E50000000000000000001B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChinonES3000;
+			productName = ChinonES3000;
+			productReference = C3E500000000000000000014 /* Chinon ES-3000.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C3E500000000000000000015 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					C3E500000000000000000019 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = C3E50000000000000000001D /* Build configuration list for PBXProject "ChinonES3000" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C3E500000000000000000016;
+			productRefGroup = C3E500000000000000000018 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C3E500000000000000000019 /* ChinonES3000 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C3E50000000000000000001B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3E500000000000000000011 /* chinon_params.json in Resources */,
+				C3E500000000000000000012 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C3E50000000000000000001A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3E50000000000000000000A /* ChinonApp.swift in Sources */,
+				C3E50000000000000000000B /* ContentView.swift in Sources */,
+				C3E50000000000000000000C /* AppModel.swift in Sources */,
+				C3E50000000000000000000D /* Camera.swift in Sources */,
+				C3E50000000000000000000E /* SerialPort.swift in Sources */,
+				C3E50000000000000000000F /* Decoder.swift in Sources */,
+				C3E500000000000000000010 /* ImageSupport.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C3E50000000000000000001F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C3E500000000000000000020 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		C3E500000000000000000021 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ChinonES3000/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Chinon ES-3000";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Protocol and decoder by mdlustri (MIT License).";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "local.chinon-es3000";
+				PRODUCT_MODULE_NAME = ChinonES3000;
+				PRODUCT_NAME = "Chinon ES-3000";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C3E500000000000000000022 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ChinonES3000/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Chinon ES-3000";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Protocol and decoder by mdlustri (MIT License).";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "local.chinon-es3000";
+				PRODUCT_MODULE_NAME = ChinonES3000;
+				PRODUCT_NAME = "Chinon ES-3000";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C3E50000000000000000001D /* Build configuration list for PBXProject "ChinonES3000" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3E50000000000000000001F /* Debug */,
+				C3E500000000000000000020 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3E50000000000000000001E /* Build configuration list for PBXNativeTarget "ChinonES3000" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3E500000000000000000021 /* Debug */,
+				C3E500000000000000000022 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C3E500000000000000000015 /* Project object */;
+}

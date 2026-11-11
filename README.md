@@ -1,27 +1,28 @@
-# Chinon ES-3000 for modern Windows
+# Chinon ES-3000 for Apple Silicon Macs
 
-Download, convert, and control a **Chinon ES-3000** (1995) digital camera from Windows 10/11.
-No Windows 3.1, no virtual machine, and no original software needed.
+Download, convert, and control a **Chinon ES-3000** (1995) digital camera from a modern Mac.
+A native SwiftUI app for Apple Silicon (it builds for Intel Macs too): no Python, no Terminal,
+no shell scripts, no virtual machine, and no original software needed.
 
-The camera's serial protocol and its `.DCT` image format were reverse-engineered from the
-original 1995 driver and serial captures.
+This is a Swift port of [chinon-es3000-windows](https://github.com/lustrinomatt/chinon-es3000-windows)
+by mdlustri, who reverse-engineered the camera's serial protocol and its `.DCT` image format from
+the original 1995 driver and serial captures.
 
-I have not tested this with the other OEM models: Dakota DCC 9500, Dycam 10-C, Kodak DC50 zoom, and Promaster Digital One
-
-![The app connected to a camera](docs/gui.png)
+Not tested with the other OEM models: Dakota DCC 9500, Dycam 10-C, Kodak DC50 zoom, and Promaster Digital One.
 
 ## What it does
 
-* Finds the camera on any COM port automatically
+* Finds the camera on any USB serial adapter automatically (`/dev/cu.usbserial-*` and similar)
 * Lists the pictures in the camera with their dates and a small preview (decoded from the
   camera's thumbnails)
-* Downloads them as `.DCT` (original data) + `.png`; **Download new** skips pictures
-  already in your folder
+* Downloads them as PNG, JPEG or TIFF, optionally keeping the original `.DCT` data;
+  **Download New** skips pictures already in your folder
 * Optional fast transfers at 115200 baud, with automatic fallback to 57600
-* Converts old `.DCT` files saved by the original software
+* Converts old `.DCT` files saved by the original software: File ▸ Convert, drag them onto
+  the window, or open them with the app from Finder
 * Remote control: resolution, flash, focus, zoom, self-timer, take a picture, set the clock,
   erase all
-* Saves as PNG, JPG, TIFF or BMP; lossless rotate; picture info; battery indicator
+* Lossless rotate (re-decodes from the `.DCT`), picture info, battery indicator
 * Remembers your port, save folder and speed between runs
 * Reads the camera's current settings, pictures left, and the date each photo was taken
   (downloaded files are named and time-stamped with it)
@@ -31,30 +32,36 @@ I have not tested this with the other OEM models: Dakota DCC 9500, Dycam 10-C, K
 * The camera's PC serial cable (8-pin mini-DIN to DB9)
 * A USB-to-RS232 (DB9) adapter. FTDI-based adapters work well.
 * The camera switched on: slide the **lens cover** open and keep it open while connected.
+* Xcode (free from the Mac App Store) to build the app once. macOS 13 Ventura or later.
+
+## Building the app
+
+1. Open `ChinonES3000.xcodeproj` in Xcode.
+2. Choose **Product ▸ Archive**. In the Organizer that opens, click **Distribute App ▸ Custom ▸ Copy App**
+   and save it. Drag **Chinon ES-3000.app** to your Applications folder.
+
+   To just try it, press **⌘R** to build and run from Xcode.
+
+The project signs the app to run locally, so no Apple developer account is needed.
 
 ## Quick start
 
-**Easiest:** download `Chinon ES-3000.exe` from the
-[Releases](../../releases) page and run it. No Python needed.
+1. Plug in the USB-serial adapter and connect the camera cable.
+2. Slide the lens cover open.
+3. Click **Connect**, then **Download New**. Photos go to `Pictures/Chinon ES-3000` unless
+   you choose another folder.
 
-**From source:**
+## Memory cards
 
-1. Install Python 3 (`winget install -e --id Python.Python.3.13`)
-2. Double-click `src/Run Chinon App.bat`
-3. Click **Connect**, then **Download new**
-
-To get a standalone `Chinon ES-3000.exe`, run `src/Build EXE.bat`.
-
-Command line (no window):
-
-```
-pip install -r requirements.txt
-python src/chinon_decode.py picture.DCT        # -> picture.png
-```
+With a PC card inserted, the camera uses the card in place of its 1 MB internal memory, so
+the app lists, downloads and erases the card's pictures over the same cable. The card must be
+a linear flash card the camera accepts (ATA flash and CompactFlash adapters give **Er 1**).
+Erasing a full card can take a few minutes.
 
 ## Sample photos
 
-Taken with an ES-3000 and downloaded/decoded with this app (unedited apart from rotation).
+Taken with an ES-3000 and decoded with the original project's decoder, which this app's
+decoder matches (unedited apart from rotation).
 
 | Superfine (640×480) | Fine (640×480, rotated) |
 |---|---|
@@ -73,21 +80,26 @@ Taken with an ES-3000 and downloaded/decoded with this app (unedited apart from 
 
 | | |
 |---|---|
-| `src/chinon_app.py` | Windows app (Tkinter) |
-| `src/chinon_camera.py` | protocol library |
-| `src/chinon_decode.py` + `chinon_params.json` | `.DCT` → image decoder, thumbnail decoder |
-| `src/chinon.ico` | app icon |
-| `tools/chinon_sniffer.py` | serial man-in-the-middle logger used for the reverse engineering (VirtualBox TCP serial ↔ real COM port) |
+| `ChinonES3000/Decoder.swift` + `chinon_params.json` | `.DCT` → image decoder, thumbnail decoder |
+| `ChinonES3000/Camera.swift` | serial protocol |
+| `ChinonES3000/SerialPort.swift` | termios serial port for macOS |
+| `ChinonES3000/AppModel.swift`, `ContentView.swift`, `ChinonApp.swift` | the app |
+| `ChinonES3000/ImageSupport.swift` | saving, rotating and displaying pictures |
+| `tools/chinon_sniffer.py` | serial man-in-the-middle logger from the original reverse engineering |
 
 ## Status
 
-Verified on a real camera: connect, status, picture list, download (byte-identical to the
-original software), decode of all three resolutions, resolution, flash, focus, zoom,
-self-timer, take picture, set clock, photo timestamps, and erase all. Thumbnails are decoded
-from recorded camera data. 115200 baud works (Superfine in ~18 s instead of ~38 s). Not yet verified: the low-battery code, PC-card
-commands, and anything on the rebadged models.
+* **Decoder:** output checked against the original Python decoder on all three resolutions and
+  on thumbnails. A few pixels per picture differ by one brightness level (floating-point rounding).
+* **Protocol:** connect, status, picture list, thumbnails, downloads and camera settings tested
+  against a simulated camera.
+* **Not yet verified:** building and running on a real Mac with a real camera and adapter. Bug
+  reports welcome.
 
-## Notes
+## Credits and notes
+
+Protocol, image format, and decoder parameters: mdlustri,
+[chinon-es3000-windows](https://github.com/lustrinomatt/chinon-es3000-windows) (MIT License).
 
 This project contains no code or files from the original Chinon/Monsoon software. You
 need your own camera and cable.
